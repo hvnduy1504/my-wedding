@@ -15,8 +15,10 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get('/', (req, res) => {
 
 	var options = {
-	  host: 'localhost',
-	  port: 8080,
+	/* host: 'localhost',
+	  port: 8080,*/
+	  host: 'my-wedding-backend.herokuapp.com',
+	  port: 443,
 	  path: '/guests/',
 	  method: 'GET'
 	};
