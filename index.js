@@ -15,10 +15,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.get('/', (req, res) => {
 
 	var options = {
-	/* host: 'localhost',
-	  port: 8080,*/
 	  host: 'my-wedding-backend.herokuapp.com',
-	  port: 443,
+	  //port: 8080,
 	  path: '/guests/',
 	  method: 'GET'
 	};
@@ -34,7 +32,7 @@ app.get('/', (req, res) => {
 		// This is called when the request is finished and response is returned
 		// Hence, use the constructed body string to parse it to json and return
 		restRes.on('end', function () {
-		   //console.log('whole response > ' + body); 
+		   console.log('whole response > ' + body); 
 		 	var jsonObject = JSON.parse(body);
 			jsonObject.content.forEach(e => {
 				if (e.name) {
